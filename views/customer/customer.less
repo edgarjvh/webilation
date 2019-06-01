@@ -1,0 +1,276 @@
+@labelColor: rgba(0, 0, 0, 0.7);
+@sectionTitleFontSize: 12px;
+@sectionTitlePadding: 0 3px;
+
+.customer-container {
+    width: 100%;
+    height: 100%;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    .customer-content {
+        width: 100%;
+        flex-grow: 1;
+
+        position: relative;
+        overflow: hidden;
+
+        
+        .customer-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+
+            left: 0;
+            top: 0;
+            justify-content: space-between;
+
+            .left-column-section,
+            .right-column-section {
+
+                height: 100%;
+            }
+
+            .left-column-section {
+                widows: ~"calc(100% - 8.75rem)";
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            .right-column-section {
+                width: 8.75rem;
+                min-width: 8.75rem;
+                padding: 0 5px;
+                margin-left: 0.8rem;
+
+                .mochi-button {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .mochi-button-base {
+                        flex-grow: 1;
+                        display: inline-block;
+                        white-space: normal;
+                        font-size: 1rem;
+                        line-height: initial;
+                    }
+                }
+            }
+
+            .forms-section-container {
+                display: flex;
+                flex-direction: row;
+                width: 100%;                
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                .customer-section {
+                    min-width: 35%;
+                    max-width: 35%;
+                    padding: 5px;
+                    position: relative;
+                    .row-section{
+                        flex-grow: 1;
+                    }
+                }
+
+                .mailing-address-section {
+                    min-width: 50%;
+                    max-width: 50%;
+                    padding: 5px;
+                    position: relative;
+                    display: flex;
+
+                    .form-section {
+                        flex-grow: 1;
+                        max-width: 69.5%;
+                        // max-height: 238px;
+                    }
+
+                    .form-section-extra {
+                        flex-grow: 1;
+                        // max-height: 238px;
+                        // margin-top: 10px;
+                        padding-left: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .input-box-container {
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .credit-section {                    
+                    padding: 5px;
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    .form-section {
+                        // width: 100%;
+                        flex-grow: 1;
+                        justify-content: space-around;
+                    }
+                }
+
+                .contacts-section {
+                    min-width: 35%;
+                    max-width: 35%;
+                    padding: 5px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    .form-section {
+                        flex-grow: 1;
+                    }
+
+                    .row-section {
+                        flex-wrap: wrap;
+
+                        .name-box {
+                            flex-grow: initial;
+                            width: 48%;
+                        }
+                    }
+
+                    .portal-section {
+                        position: relative;
+                        width: 100%;
+                        min-height: 10.625rem;
+                        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+                        border: 1px solid rgba(0, 0, 0, 0.5);
+                        margin-top: 5px;
+
+                    }
+                }
+
+                .automatic-emails-section {
+                    min-width: 50%;
+                    max-width: 50%;
+                    padding: 5px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    .form-section {
+                        flex-grow: 1;
+                        justify-content: space-around;
+                    }
+
+                    .portal-section {
+                        position: relative;
+                        width: 100%;
+                        min-height: 10.625rem;
+                        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+                        border: 1px solid rgba(0, 0, 0, 0.5);
+                        margin-top: 5px;
+
+                    }
+                }
+
+                .aditional-docs-section {
+                    padding: 5px;
+                    position: relative;
+                    display: flex;
+                    width: 100%;                   
+                    flex-direction: column;
+
+                    >.form-section {
+                        width: 100%;
+                        flex-grow: 1;
+                        justify-content: flex-start;
+                        .row-section{
+                            display: flex;
+                            justify-content: flex-start;
+
+                        }
+                        .section-title{
+                            font-size: 0.6rem;
+                        }
+                        // .input-toggle-container {
+                        //     width: 100%;
+                        // }
+                    }
+
+                    .form-section-hours {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        min-height: 10.625rem;
+                        margin-top: 5px;
+
+                        .form-section {
+                            height: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        }
+
+                        .form-section:not(:first-child) {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+
+                .notes-section {
+                    min-width: 35%;
+                    max-width: 35%;
+                    padding: 5px;
+                    position: relative;
+                    display: flex;
+
+                    .form-section-notes-portal {
+                        flex-grow: 1;
+
+                        .form-section {
+                            height: 100%;
+
+                            .portal-section {
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+
+                .directions-section {
+                    min-width: 50%;
+                    max-width: 50%;
+                    padding: 5px;
+                    position: relative;
+
+                    .form-section {
+                        height: 100%;
+
+                        .portal-section {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
