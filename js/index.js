@@ -5,6 +5,7 @@ import { DispatchContainer } from '../views/dispatch/dispatch.js';
 import { CustomerContainer } from '../views/customer/customer.js';
 import { CarrierContainer } from '../views/carrier/carrier.js';
 import { LoadBoardContainer } from '../views/load-board/load-board.js';
+import { InvoiceContainer } from '../views/invoicing/invoicing.js';
 
 var taskBar = new TaskBar();
 var mainContainer = new MainContainer();
@@ -13,12 +14,13 @@ var dispatch = new DispatchContainer();
 var customer = new CustomerContainer();
 var carrier = new CarrierContainer();
 var loadBoard = new LoadBoardContainer();
+var invoice = new InvoiceContainer();
 var winRes = $(this).width();
 var swiper;
 
 $(document).ready(function () {
     // Adding dynamically the task bar and the main container
-    taskBar.create(swiper, email, dispatch, customer, carrier, loadBoard, function () {
+    taskBar.create(swiper, email, dispatch, customer, carrier, loadBoard, invoice, function () {
         mainContainer.create();
     });
 

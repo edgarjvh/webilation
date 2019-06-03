@@ -1,18 +1,17 @@
 let location = window.location.href;
 
-export class CarrierContainer {
+export class InvoiceContainer {
     create(callback) {
-        console.log('creating carrier');
+        console.log('creating invoicing');
         let container = $(document).find('.swiper-wrapper');
 
-        if ($(document).find('.swiper-slide #carrier-container').length === 0) {
-
+        if ($(document).find('.swiper-slide #invoice-container').length === 0) {
             let loader = $(document).find('.main-app-loader');
             loader.fadeIn(300);
-
-            $.get(location + 'views/carrier/carrier.html', async function (content) {
+            $.get(location + 'views/invoicing/invoicing.html', async function (content) {
                 $(container).append(content);
                 await eventListeners();
+                await reorderDispatchPanels();
                 await callback();
                 loader.fadeOut(300);
             }, 'html');
@@ -20,10 +19,10 @@ export class CarrierContainer {
     }
 }
 
-function eventListeners() {
-    let containerWidth = $(document).find('#swiper-slide-carrier').width();
+function eventListeners(){
+    let containerWidth = $(document).find('#swiper-slide-invoice').width();
 
-    $('#carrier-main-panel-container')
+    $('#invoice-main-panel-container')
         .resizable({
             handles: "w",
             containment: "parent",
@@ -53,7 +52,7 @@ function eventListeners() {
         let panelContainer = panel.closest('.panel-container');
 
         panel.appendTo(panelContainer);
-        reorderCarrierPanels();
+        reorderDispatchPanels();
     });
 
     $(document).on('click', '.panel-close-btn', function () {
@@ -69,200 +68,29 @@ function eventListeners() {
             if (panelContainer.find('.panel').length === 0) {
                 mainPanelContainer.css('left', '100%');
             } else {
-                reorderCarrierPanels();
+                reorderDispatchPanels();
             }
         });
-    });
-
-    $(document).on('click', '#carrier-mailing-address-revenue-info-btn', function () {
-        let btn = $(this);
-        let mainContainer = btn.closest('.swiper-slide').find('.main-panel-container');
-        let panelContainer = mainContainer.find('.panel-container');
-
-        $.get(location + 'views/panels/revenue-info/revenue-information.html', async function (content) {
-            if (panelContainer.find('.panel').length === 0) {
-
-                mainContainer.css('left', ($(window).width() - mainContainer.width()) + 'px');
-                panelContainer.append(content);
-                reorderCarrierPanels();
-            } else {
-                let exist = false;
-
-                for (let i = 0; i < panelContainer.find('.panel').length; i++) {
-                    let panel = panelContainer.find('.panel').eq(i);
-
-                    if (panel.attr('id') === 'panel-carrier-revenue-information') {
-                        panel.appendTo(panelContainer);
-                        reorderCarrierPanels();
-                        exist = true;
-                        break;
-                    }
-                }
-
-                if (!exist) {
-                    panelContainer.append(content);
-                    reorderCarrierPanels();
-                }
-            }
-
-        }, 'html');
-    });
-
-    $(document).on('click', '#carrier-mailing-address-documents-btn', function () {
-        let btn = $(this);
-        let mainContainer = btn.closest('.swiper-slide').find('.main-panel-container');
-        let panelContainer = mainContainer.find('.panel-container');
-
-        $.get(location + 'views/panels/documents/documents.html', async function (content) {
-            if (panelContainer.find('.panel').length === 0) {
-
-                mainContainer.css('left', ($(window).width() - mainContainer.width()) + 'px');
-                panelContainer.append(content);
-                reorderCarrierPanels();
-            } else {
-                let exist = false;
-
-                for (let i = 0; i < panelContainer.find('.panel').length; i++) {
-                    let panel = panelContainer.find('.panel').eq(i);
-
-                    if (panel.attr('id') === 'panel-carrier-docs') {
-                        panel.appendTo(panelContainer);
-                        reorderCarrierPanels();
-                        exist = true;
-                        break;
-                    }
-                }
-
-                if (!exist) {
-                    panelContainer.append(content);
-                    reorderCarrierPanels();
-                }
-            }
-
-        }, 'html');
-    });
-
-    $(document).on('click', '#carriers-contacts-add-btn', function () {
-        let btn = $(this);
-        let mainContainer = btn.closest('.swiper-slide').find('.main-panel-container');
-        let panelContainer = mainContainer.find('.panel-container');
-
-        $.get(location + 'views/panels/contacts/contacts.html', async function (content) {
-            if (panelContainer.find('.panel').length === 0) {
-
-                mainContainer.css('left', ($(window).width() - mainContainer.width()) + 'px');
-                panelContainer.append(content);
-                reorderCarrierPanels();
-            } else {
-                let exist = false;
-
-                for (let i = 0; i < panelContainer.find('.panel').length; i++) {
-                    let panel = panelContainer.find('.panel').eq(i);
-
-                    if (panel.attr('id') === 'panel-contacts') {
-                        panel.appendTo(panelContainer);
-                        reorderCarrierPanels();
-                        exist = true;
-                        break;
-                    }
-                }
-
-                if (!exist) {
-                    panelContainer.append(content);
-                    reorderCarrierPanels();
-                }
-            }
-
-        }, 'html');
-    });
-
-    $(document).on('click', '#carrier-mailing-address-order-history-btn', function () {
-        let btn = $(this);
-        let mainContainer = btn.closest('.swiper-slide').find('.main-panel-container');
-        let panelContainer = mainContainer.find('.panel-container');
-
-        $.get(location + 'views/panels/order-history/order-history.html', async function (content) {
-            if (panelContainer.find('.panel').length === 0) {
-
-                mainContainer.css('left', ($(window).width() - mainContainer.width()) + 'px');
-                panelContainer.append(content);
-                reorderCarrierPanels();
-            } else {
-                let exist = false;
-
-                for (let i = 0; i < panelContainer.find('.panel').length; i++) {
-                    let panel = panelContainer.find('.panel').eq(i);
-
-                    if (panel.attr('id') === 'panel-carrier-order-history') {
-                        panel.appendTo(panelContainer);
-                        reorderCarrierPanels();
-                        exist = true;
-                        break;
-                    }
-                }
-
-                if (!exist) {
-                    panelContainer.append(content);
-                    reorderCarrierPanels();
-                }
-            }
-
-        }, 'html');
-    });
-
-    $('.star-rating-btn').mouseover(function () {
-        let btn = $(this);
-        let id = btn.attr('id');
-        let rateSelected = true;
-        let ratingBox = btn.closest('rating-box-container');
-        let starCount = ratingBox.find('star-rating-btn').length;
-
-        for (let i = 0; i < starCount; i++) {
-            let curBtn = ratingBox.find('.star-rating-btn').eq(i);
-            let curId = curBtn.attr('id');
-
-            if (rateSelected) {
-                curBtn.removeClass('far');
-                curBtn.addClass('fas');
-            } else {
-                curBtn.removeClass('fas');
-                curBtn.addClass('far');
-            }
-
-            if (curId === id) {
-                rateSelected = false;
-            }
-        }
-    });
-    $('.star-rating-btn').mouseleave(function () {
-        let btn = $(this);
-        let ratingBox = btn.closest('rating-box-container');
-        let starBtn = ratingBox.find('star-rating-btn');
-
-        starBtn.removeClass('fas');
-        starBtn.addClass('far');
-        rateSelected = true;
     });
 
     $(document).on('click', '.input-box-container.drop-down input', function (e) {
         e.stopPropagation();
         let input = $(this);
-        let popupContainer = input.closest('.carrier-wrapper').find('.mochi-contextual-container');
+        let popupContainer = input.closest('.invoice-wrapper').find('.mochi-contextual-container');
         let popup = popupContainer.find('.mochi-contextual-popup');
 
-        switch (input.attr('id')) {
-            case 'cbo-carrier-insurance-type':
+        switch (input.attr('id')) {            
+            case 'cbo-invoice-carrier-equipment':
                 popup.html(`
                         <div class="mochi-contextual-popup-content">
                             <div class="mochi-contextual-popup-wrapper">
-                                <p class="mochi-contextual-popup-item">Type 1</p>
-                                <p class="mochi-contextual-popup-item">Type 2</p>
-                                <p class="mochi-contextual-popup-item">Type 3</p>
+                                <p class="mochi-contextual-popup-item">Equip. 1</p>
+                                <p class="mochi-contextual-popup-item">Equip. 2</p>
+                                <p class="mochi-contextual-popup-item">Equip. 3</p>
                             </div>
                         </div>
                 `);
-                break;
-           
+                break;            
             default:
                 break;
         }
@@ -364,35 +192,6 @@ function getPopupPosition(input, popupContainer) {
     }
 }
 
-function reorderCarrierPanels() {
-    let mainContainer = $(document).find('#carrier-main-panel-container');
-    let panelContainer = mainContainer.find('.panel-container');
-    let panelCount = panelContainer.find('.panel').length;
-    let gutter = mainContainer.find('.gutter');
-
-    if (panelCount > 0) {
-        gutter.css('width', ((panelCount - 1) * 10) + 'px');
-    }
-
-    for (let i = 0; i < panelCount; i++) {
-        let panel = mainContainer.find('.panel-container .panel').eq(i);
-        let offset = i * 10;
-
-        panel.css('padding-right', offset + 'px');
-        panel.animate({
-            left: offset + 'px'
-        }, 100);
-
-        if (i === (panelCount - 1)) {
-            panel.find('.panel-not-focused').fadeOut(100);
-        } else {
-            panel.find('.panel-not-focused').fadeIn(100);
-        }
-    }
-
-    setPanelDraggable();
-}
-
 function setPanelDraggable() {
     $('.panel')
         .draggable({
@@ -404,20 +203,20 @@ function setPanelDraggable() {
                 let winSize = $(window).width();
 
                 if (u.position.left < 0) {
-                    reorderCarrierPanels();
+                    reorderDispatchPanels();
                 } else if (u.position.left > 100) {
                     $(this).animate({
                         left: '100%'
-                    }, 100, function () {
-                        $(this).remove();
+                    }, 100, async function () {
+                        await $(this).remove();
                         if (panelContainer.find('.panel').length === 0) {
                             mainPanelContainer.css('left', '100%');
                         } else {
-                            reorderCarrierPanels();
+                            reorderDispatchPanels();
                         }
                     });
                 } else {
-                    reorderCarrierPanels();
+                    reorderDispatchPanels();
                 }
             }
         });
@@ -456,7 +255,7 @@ function setPanelDraggableVertical() {
                                 }
 
                             } else {
-                                reorderCarrierPanels();
+                                reorderDispatchPanels();
                             }
                         }
                     });
@@ -482,9 +281,8 @@ function setPanelDraggableVertical() {
                                         left: ((100 / count) * i) + '%'
                                     }, 100);
                                 }
-
                             } else {
-                                reorderCarrierPanels();
+                                reorderDispatchPanels();
                             }
                         }
                     });
@@ -501,4 +299,38 @@ function setPanelDraggableVertical() {
                 }
             }
         });
+}
+
+function reorderDispatchPanels() {
+    let mainContainer = $(document).find('#invoice-main-panel-container');
+    let panelContainerWidth = mainContainer.find('.panel-container').width();
+    let panelCount = mainContainer.find('.panel-container .panel').length;
+    let gutter = mainContainer.find('.gutter');
+
+    if (panelCount > 0) {
+        gutter.css('width', ((panelCount - 1) * 10) + 'px');
+    }
+
+    for (let i = 0; i < panelCount; i++) {
+        let panel = mainContainer.find('.panel-container .panel').eq(i);
+        let offset = i * 10;
+
+        panel.css('padding-right', offset + 'px');
+        panel.animate({
+            left: offset + 'px'
+        }, 100);
+
+        panel.animate({
+            top: '0'
+        }, 100);
+
+        if (i === (panelCount - 1)) {
+            panel.find('.panel-not-focused').fadeOut(100);
+        } else {
+            panel.find('.panel-not-focused').fadeIn(100);
+        }
+        panel.find('.panel-selection-handler').hide();
+    }
+
+    setPanelDraggable();
 }

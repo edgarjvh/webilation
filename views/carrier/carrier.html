@@ -3,6 +3,16 @@
     <div class="carrier-container main-slide-container" id="carrier-container">
         <div class="carrier-content">
             <div class="carrier-wrapper">
+                <div class="mochi-contextual-container" data-ctrl-id="">
+                    <div class="mochi-contextual-popup">
+                        <div class="mochi-contextual-popup-content">
+                            <div class="mochi-contextual-popup-wrapper">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="main-row-section growed">
                     <div class="main-cell cell-1">
                         <div class="form-section">
@@ -34,14 +44,14 @@
                                         name="txt-carriers-carrier-code" title="Carrier Code">
                                     <label for="txt-carriers-carrier-code">Code</label>
                                 </div>
-
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-carrier-name"
                                         name="txt-carriers-carrier-name" title="Carrier Name">
                                     <label for="txt-carriers-carrier-name">Name</label>
                                 </div>
                             </div>
-
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-carrier-address-1"
@@ -49,6 +59,7 @@
                                     <label for="txt-carriers-carrier-address-1">Address 1</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-carrier-address-2"
@@ -56,23 +67,27 @@
                                     <label for="txt-carriers-carrier-address-2">Address 2</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-carrier-city"
                                         name="txt-carriers-carrier-city" title="Carrier City">
                                     <label for="txt-carriers-carrier-city">City</label>
                                 </div>
-                                <div class="input-box-container phone-number">
+                                <div class="hsep"></div>
+                                <div class="input-box-container state">
                                     <input required type="text" id="txt-carriers-carrier-state"
-                                        name="txt-carriers-carrier-state" title="Carrier State">
+                                        name="txt-carriers-carrier-state" title="Carrier State" maxlength="2">
                                     <label for="txt-carriers-carrier-state">State</label>
                                 </div>
-                                <div class="input-box-container phone-ext">
+                                <div class="hsep"></div>
+                                <div class="input-box-container zip-code">
                                     <input required type="text" id="txt-carriers-carrier-zip-code"
                                         name="txt-carriers-carrier-zip-code" title="Carrier Postal Code">
                                     <label for="txt-carriers-carrier-zip-code">Postal Code</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-carrier-email"
@@ -121,8 +136,8 @@
                                 <label for="txt-carrier-carrier-fid">FID</label>
                             </div>
                             <div class="input-box-container insurance">
-                                <input required type="text" id="txt-carriers-carrier-insurance" name="txt-carriers-carrier-insurance"
-                                    title="Carrier Insurance">
+                                <input required type="text" id="txt-carriers-carrier-insurance"
+                                    name="txt-carriers-carrier-insurance" title="Carrier Insurance">
                                 <label for="txt-carriers-carrier-insurance">Insurance</label>
                             </div>
                         </div>
@@ -137,7 +152,7 @@
                                     <div class="mochi-button text-center" id="carriers-contacts-add-btn">
                                         <div class="mochi-button-decorator mochi-button-decorator-left">(</div>
                                         <div class="mochi-button-base">
-                                            Add
+                                            More
                                         </div>
                                         <div class="mochi-button-decorator mochi-button-decorator-right">)</div>
                                     </div>
@@ -150,24 +165,27 @@
                                         name="txt-carrier-contacts-first-name" title="Contact First Name">
                                     <label for="txt-carrier-contacts-first-name">First Name</label>
                                 </div>
-
+                                <div class="hsep"></div>
                                 <div class="input-box-container name-box">
                                     <input required type="text" id="txt-carrier-contacts-last-name"
                                         name="txt-carrier-contacts-last-name" title="Contact Last Name">
                                     <label for="txt-carrier-contacts-last-name">Last Name</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-contacts-phone-number"
                                         name="txt-carrier-contacts-phone-number" title="Contact Phone">
                                     <label for="txt-carrier-contacts-phone-number">Phone</label>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container phone-ext">
                                     <input required type="text" id="txt-carrier-contacts-phone-ext"
                                         name="txt-carrier-contacts-phone-ext" title="Contact Phone Ext">
                                     <label for="txt-carrier-contacts-phone-ext">Ext</label>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-toggle-container">
                                     <input required type="checkbox" id="toggle-carrier-contacts-phone-primary"
                                         name="toggle-carrier-contacts-phone-primary">
@@ -177,12 +195,14 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-contacts-email"
                                         name="txt-carrier-contacts-email" title="Contact E-Mail">
                                     <label for="txt-carrier-contacts-email">E-Mail</label>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-contacts-notes"
                                         name="txt-carrier-contacts-notes" title="Contact Notes">
@@ -205,50 +225,53 @@
                                 <div class="right-border"></div>
                             </div>
                             <div class="row-section no-wraping">
-                                <div class="input-box-container name-box">
+                                <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-driver-info-first-name"
                                         name="txt-carrier-driver-info-first-name" title="Driver First Name">
                                     <label for="txt-carrier-driver-info-first-name">First Name</label>
                                 </div>
-                                <div class="separator"></div>
-                                <div class="input-box-container name-box">
+                                <div class="hsep"></div>
+                                <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-driver-info-last-name"
                                         name="txt-carrier-driver-info-last-name" title="Driver Last Name">
                                     <label for="txt-carrier-driver-info-last-name">Last Name</label>
                                 </div>
                             </div>
-
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container phone-number">
                                     <input required type="text" id="txt-carrier-driver-info-phone-number"
                                         name="txt-carrier-driver-info-phone-number" title="Driver Phone">
                                     <label for="txt-carrier-driver-info-phone-number">Phone</label>
                                 </div>
-                                <div class="separator"></div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-driver-info-email"
                                         name="txt-carrier-driver-info-email" title="Driver E-Mail">
                                     <label for="txt-carrier-driver-info-email">E-Mail</label>
                                 </div>
                             </div>
-
+                            <div class="vsep"></div>
                             <div class="row-section no-wraping">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-driver-info-equipment"
                                         name="txt-carrier-driver-info-equipment" title="Driver Equipment">
                                     <label for="txt-carrier-driver-info-equipment">Equipment</label>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-driver-info-phone-truck"
                                         name="txt-carrier-contacts-phone-truck" title="Driver Truck">
                                     <label for="txt-carrier-driver-info-phone-truck">Truck</label>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-driver-info-phone-trailer"
                                         name="txt-carrier-driver-info-phone-trailer" title="Driver Trailer">
                                     <label for="txt-carrier-driver-info-phone-trailer">Trailer</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-driver-info-notes"
@@ -256,6 +279,7 @@
                                     <label for="txt-carrier-driver-info-notes">Notes</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section buttons">
                                 <div class="mochi-button text-center" id="carrier-mailing-address-remit-btn">
                                     <div class="mochi-button-decorator mochi-button-decorator-left">(</div>
@@ -293,14 +317,14 @@
                                         name="txt-carriers-mailing-address-code" title="Carrier Code">
                                     <label for="txt-carriers-mailing-address-code">Code</label>
                                 </div>
-
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-mailing-address-name"
                                         name="txt-carriers-mailing-address-name" title="Carrier Name">
                                     <label for="txt-carriers-mailing-address-name">Name</label>
                                 </div>
                             </div>
-
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-mailing-address-address-1"
@@ -308,6 +332,7 @@
                                     <label for="txt-carriers-mailing-address-address-1">Address 1</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-mailing-address-address-2"
@@ -315,23 +340,27 @@
                                     <label for="txt-carriers-mailing-address-address-2">Address 2</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-mailing-address-city"
                                         name="txt-carriers-mailing-address-city" title="Carrier City">
                                     <label for="txt-carriers-mailing-address-city">City</label>
                                 </div>
-                                <div class="input-box-container phone-number">
+                                <div class="hsep"></div>
+                                <div class="input-box-container state">
                                     <input required type="text" id="txt-carriers-mailing-address-state"
-                                        name="txt-carriers-mailing-address-state" title="Carrier State">
+                                        name="txt-carriers-mailing-address-state" title="Carrier State" maxlength="2">
                                     <label for="txt-carriers-mailing-address-state">State</label>
                                 </div>
-                                <div class="input-box-container phone-ext">
+                                <div class="hsep"></div>
+                                <div class="input-box-container zip-code">
                                     <input required type="text" id="txt-carriers-mailing-address-zip-code"
                                         name="txt-carriers-mailing-address-zip-code" title="Carrier Postal Code">
                                     <label for="txt-carriers-mailing-address-zip-code">Postal Code</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-mailing-address-email"
@@ -380,7 +409,7 @@
                                 <div class="right-border"></div>
                             </div>
                             <div class="row-section">
-                                <div class="select-box-container">
+                                <!-- <div class="select-box-container">
                                     <select required id="cbo-carrier-insurance-type" name="cbo-carrier-insurance-type"
                                         title="Insurance Type">
                                         <option value="1">Type 1</option>
@@ -388,41 +417,49 @@
                                         <option value="3">Type 3</option>
                                     </select>
                                     <label for="cbo-carrier-insurance-type">Type</label>
+                                </div> -->
+                                <div class="input-box-container drop-down">
+                                    <input required type="text" id="cbo-carrier-insurance-type"
+                                        name="cbo-carrier-insurance-type" title="Insurance Type"
+                                        data-selected-index="none">
+                                    <label for="cbo-carrier-insurance-type">Type</label>
+                                    <span class="fas fa-sort-down"></span>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-insurance-company"
                                         name="txt-carrier-insurance-company" title="Insurance Company">
                                     <label for="txt-carrier-insurance-company">Company</label>
                                 </div>
-
                             </div>
-
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-insurance-expiration-date"
                                         name="txt-carrier-insurance-expiration-date" title="Insurance Expiration Date">
                                     <label for="txt-carrier-insurance-expiration-date">Expiration Date</label>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-insurance-amount"
                                         name="txt-carrier-insurance-amount" title="Insurance Amount">
                                     <label for="txt-carrier-insurance-amount">Amount</label>
                                 </div>
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carrier-insurance-deductible"
                                         name="txt-carrier-insurance-deductible" title="Insurance Deductible">
                                     <label for="txt-carrier-insurance-deductible">Deductible</label>
                                 </div>
-
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
-                                    <input required type="text" id="txt-carriers-insurance-notes" name="txt-carriers-insurance-notes"
-                                        title="Insurance Notes">
+                                    <input required type="text" id="txt-carriers-insurance-notes"
+                                        name="txt-carriers-insurance-notes" title="Insurance Notes">
                                     <label for="txt-carriers-insurance-notes">Notes</label>
                                 </div>
                             </div>
-
                         </div>
                         <div class="portal-section">
                             <div class="contacts-portal-content">
@@ -474,14 +511,14 @@
                                         name="txt-carriers-factoring-company-code" title="Carrier Code">
                                     <label for="txt-carriers-factoring-company-code">Code</label>
                                 </div>
-
+                                <div class="hsep"></div>
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-factoring-company-name"
                                         name="txt-carriers-factoring-company-name" title="Carrier Name">
                                     <label for="txt-carriers-factoring-company-name">Name</label>
                                 </div>
                             </div>
-
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-factoring-company-address-1"
@@ -489,6 +526,7 @@
                                     <label for="txt-carriers-factoring-company-address-1">Address 1</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-factoring-company-address-2"
@@ -496,23 +534,27 @@
                                     <label for="txt-carriers-factoring-company-address-2">Address 2</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-factoring-company-city"
                                         name="txt-carriers-factoring-company-city" title="Carrier City">
                                     <label for="txt-carriers-factoring-company-city">City</label>
                                 </div>
-                                <div class="input-box-container phone-number">
+                                <div class="hsep"></div>
+                                <div class="input-box-container state">
                                     <input required type="text" id="txt-carriers-factoring-company-state"
-                                        name="txt-carriers-factoring-company-state" title="Carrier State">
+                                        name="txt-carriers-factoring-company-state" title="Carrier State" maxlength="2">
                                     <label for="txt-carriers-factoring-company-state">State</label>
                                 </div>
-                                <div class="input-box-container phone-ext">
+                                <div class="hsep"></div>
+                                <div class="input-box-container zip-code">
                                     <input required type="text" id="txt-carriers-factoring-company-zip-code"
                                         name="txt-carriers-factoring-company-zip-code" title="Carrier Postal Code">
                                     <label for="txt-carriers-factoring-company-zip-code">Postal Code</label>
                                 </div>
                             </div>
+                            <div class="vsep"></div>
                             <div class="row-section">
                                 <div class="input-box-container">
                                     <input required type="text" id="txt-carriers-factoring-company-email"

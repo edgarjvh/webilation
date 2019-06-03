@@ -1,15 +1,15 @@
 var winRes = $(window).width();
 export class TaskBar {
-    create(swiper, email, dispatch, customer, carrier, loadBoard, callback) {
+    create(swiper, email, dispatch, customer, carrier, loadBoard, invoice, callback) {
         $.get('views/task-bar/task-bar.html', function (content) {
             $('body').append(content);
-            eventListeners(swiper, email, dispatch, customer, carrier, loadBoard);
+            eventListeners(swiper, email, dispatch, customer, carrier, loadBoard, invoice);
             callback();
         }, 'html');
     }
 }
 
-function eventListeners(swiper, email, dispatch, customer, carrier, loadBoard) {
+function eventListeners(swiper, email, dispatch, customer, carrier, loadBoard, invoice) {
     $(window).on('click', function () {
         $(document).find('.mochi-contextual-container').hide();
     });
@@ -185,6 +185,31 @@ function eventListeners(swiper, email, dispatch, customer, carrier, loadBoard) {
 
             if (!exist) {
                 loadBoard.create(function () {
+                    let count = $(document).find('.swiper-wrapper .swiper-slide').length - 1;
+                    console.log('translateX(-' + (winRes * count) + 'px)');
+                    $(document).find('.swiper-wrapper').css('transform', 'translateX(-' + (winRes * count) + 'px)');
+                });
+            }
+        }
+    });
+    $(document).on('click', '#btn-invoice', () => {
+        if (typeof swiper === 'undefined') {
+            let exist = false;
+            let appCount = $(document).find('.swiper-wrapper .swiper-slide').length;
+
+            for (let i = 0; i < appCount; i++) {
+                let app = $(document).find('.swiper-wrapper .swiper-slide').eq(i);
+                let id = app.attr('id');
+                if (id === 'swiper-slide-invoice') {
+                    $(document).find('.swiper-wrapper').css('transition', 'transform linear 0.3s');
+                    $(document).find('.swiper-wrapper').css('transform', 'translateX(-' + (winRes * i) + 'px)');
+                    exist = true;
+                    break;
+                }
+            }
+
+            if (!exist) {
+                invoice.create(function () {
                     let count = $(document).find('.swiper-wrapper .swiper-slide').length - 1;
                     console.log('translateX(-' + (winRes * count) + 'px)');
                     $(document).find('.swiper-wrapper').css('transform', 'translateX(-' + (winRes * count) + 'px)');

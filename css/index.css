@@ -5,6 +5,7 @@
 @import '../views/customer/customer.css';
 @import '../views/carrier/carrier.css';
 @import '../views/load-board/load-board.css';
+@import '../views/invoicing/invoicing.css';
 * {
   box-sizing: border-box;
   font-family: 'lato', 'arial', sans-serif;
